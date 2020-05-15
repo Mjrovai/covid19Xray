@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+   <head>
+	  <link rel="icon" href="../static/MJRoBot_Avatar_1.jpg">
+	  <meta charset="UTF-8">
+      <title>covidXray</title>
+      <link rel="stylesheet" href='../static/style.css'/>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <style>
+            body {
+                background: #1D5292;
+                color: white;
+                text-align: center;
+                font-family: Arial;
+            }
+        </style>
+   </head>
+ <body>
+	 <img src="{{ url_for('static', filename='robot_Y_N.png')}}" width="80%"/>
+    <h1>covidXray</h1>
+    <h1>X-Ray Covid-19 Detection using AI</h1>
+    <h2>Proof-of-concept Application<h2>
+	<hr>
+    <h3>[WARNING] - Only for didactic purposes (See Disclaimer at botom)</h3>
+ 	<hr>
+	<form action="{{ url_for('query') }}" method = "POST" enctype = "multipart/form-data">
+        <input type = "file" name = "file" />
+        <input type = "submit"/>
+    </form>
+    <hr>
+    <br>
+    <h2>Analysis Result for Covid-19:</h2>
+
+    {% if prediction == 'POSITIVE'  %}
+          <h1 style="color:red;"> [{{prediction}}]    </h1>
+    {% else %}
+          <h1 style="color:yellow;"> [{{prediction}}]    </h1>
+    {% endif %}
+
+    <h2> Confidence: {{confidence}}%</h2>
+    <br>
+    <h4> Image File Name: {{filename}} </h4>
+
+    {% if confidence == 0  %}
+          <img src="{{ url_for('static', filename='Image_No_Pred_MJRoBot.png')}}" width="80%"/>
+    {% else %}
+          <img src="{{ xray_image }}", width="80%"/>
+    {% endif %}
+
+     <p> @2020 Marcelo Rovai - MJRoBot.org</p>
+     <br>
+     <h4>Disclaimer</h4>
+     <p>This deployment of an automatic COVID-19 detection is for educational purposes only. It is not meant to be a reliable, highly accurate COVID-19 diagnosis system, nor has it been professionally or academically vetted.<p/>
+   </body>
+</html>
