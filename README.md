@@ -1,6 +1,6 @@
-# Covid-19 Xray Detection
+# Covid-19 Xray Detection and Web-App development
 
-<img src="../images/portada_3.png"/>
+<img src="https://github.com/Mjrovai/covid19Xray/blob/master/10_X-Ray_Covid_development/images/portada.png"/>
 Developed by M.Rovai @ May, 12 2020<br>
 
 Based on the word of [Adrian Rosebrock](https://www.pyimagesearch.com/2020/03/16/detecting-covid-19-in-x-ray-images-with-keras-tensorflow-and-deep-learning/) and [Nell Trevor](https://www.kaggle.com/mauddib/covid-19-x-ray-deep-learning-api-endpoint-code)
